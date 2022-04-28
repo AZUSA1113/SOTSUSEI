@@ -19,7 +19,7 @@ class DokokoHomeController extends Controller
 
     public function __inovoke(Request $request)
         {
-            // $Findings = Finding::all();
+            $Findings = Finding::all();
             $Findings = Finding::all()->sortByDesc("id");
 
             return view('DokokoHome',compact('Findings'));

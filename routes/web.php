@@ -28,13 +28,13 @@ use App\Http\Controllers\FindingController;
 
 // Route::get('test', [testController::class, 'test']);
 
-Route::get('/', [DokokoHomeController::class, '__inovoke']);
+Route::get('/', [DokokoHomeController::class, '__inovoke'])->name('top');
 
-Route::get('DokokoHome', [DokokoHomeController::class, '__inovoke']);
+Route::get('DokokoHome', [DokokoHomeController::class, '__inovoke'])->name('top');
 
-Route::get('DokokoHome/search{keyword?}', [DokokoHomeController::class, 'DokokoSearch']);
+Route::get('DokokoHome/search{keyword?}', [DokokoHomeController::class, 'DokokoSearch'])->name('search');
 
-Route::get('DokokoLogin', [DokokoLoginController::class, 'DokokoLogin']);
+Route::get('DokokoLogin', [DokokoLoginController::class, 'DokokoLogin'])->name('login');
 
 // Route::get('DokokoMemberRegister', [DokokoMemberRegisterController::class, 'DokokoMemberRegister']);
 
@@ -42,12 +42,12 @@ Route::get('DokokoLogin', [DokokoLoginController::class, 'DokokoLogin']);
 
 Route::group(['middleware' => 'auth'], function () {
     // この中に認証済み後のルート定義を入れる
-    Route::get('DokokoFoundRegister', [DokokoFoundRegisterController::class, 'DokokoFoundRegister']);
+    Route::get('DokokoFoundRegister', [DokokoFoundRegisterController::class, 'DokokoFoundRegister'])->name('found-register');
 
 });
 
-Route::post('finding/store', [FindingController::class, 'FindingStore']);
+Route::post('finding/store', [FindingController::class, 'FindingStore'])->name('finding-store');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->name('home');

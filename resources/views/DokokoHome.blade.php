@@ -7,13 +7,13 @@
 
     <!-- <button type="button" onclick="location.href='/login'">ログイン</button> -->
 
-    <button class="position:absolute right:0"><a href="/DokokoFoundRegister">落とし物登録</a></button>
+    <button class="position:absolute right:0"><a href="{{ route('found-register') }}">落とし物登録</a></button>
 
-    <form action="/DokokoHome/search" method="GET">   
+    <form action="{{ route('search') }}" method="GET">   
         <input type="text" name="keyword" value="">
         <!-- <input type="submit" value="検索"> -->
         <button type="submit">検索</button>
-        <button><a href="{{ url('/') }}">検索解除</a></button>
+        <button><a href="{{ route('top') }}">検索解除</a></button>
     </form>
     
     <h2>New落とし物</h2>

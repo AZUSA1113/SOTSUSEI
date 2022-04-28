@@ -7,7 +7,7 @@
     <h1>落とし物登録</h1>
 
 
-    <form action="/finding/store" method="POST" enctype = "multipart/form-data">
+    <form action="{{ route('finding-store') }}" method="POST" enctype = "multipart/form-data">
     <!-- 　　// csrfは必ず入れる。二重送信対策。@csrfはformタグの中の一番上に入れると無難。 -->
     
     @csrf
